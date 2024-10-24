@@ -173,7 +173,7 @@
   .container .number-box {
     overflow: hidden;
     display: block;
-    margin-top: 17px;
+    margin-top: 13px;
     font-size: 20px;
     line-height: 28px;
   }
@@ -224,7 +224,7 @@
   }
   .jack {
     &::after {
-      content: '₾';
+      content: var(--dynamic-content, ',00₾');
       font-size: 16px;
     }
   }
@@ -243,7 +243,7 @@
     }
     .jack {
     &::after {
-      content: '₾';
+      content: var(--dynamic-content, ',00₾');
       font-size: 12px;
     }
   }
@@ -346,7 +346,7 @@
     }
     .jack {
     &::after {
-      content: '₾';
+      content: var(--dynamic-content, ',00₾');
       font-size: 14px;
     }
   }
@@ -560,6 +560,32 @@
     }
   }
   ========================================================================== */
+  function startCounting() {
+  const elements = document.querySelectorAll('.jack');
+  
+  elements.forEach(element => {
+    let count = 0;
+
+    function updateCount() {
+      // Format the count as a two-digit number
+      const formattedCount = count.toString().padStart(2, '0');
+      // Update the CSS variable for the element
+      element.style.setProperty('--dynamic-content', `",${formattedCount}₾"`);
+      
+      // Increment the count, reset to 00 if it reaches 99
+      count = (count + 1) % 100;
+    }
+
+    // Start the interval to update every 100ms
+    setInterval(updateCount, 200);
+  });
+}
+
+// Call the function to start counting
+startCounting();
+
+
+
 </script>
 
 </html>
