@@ -466,7 +466,7 @@
   let previousJackpots = [];
 
   // Specify the JackpotIds you want to use
-  const jackpotIds = [2577, 2578, 2579, 2580]; // Replace with your actual JackpotIds
+  const jackpotIds = [2587, 2588, 2589, 2590]; // Replace with your actual JackpotIds
   const jackpotAmounts = {}; // Object to hold amounts based on JackpotId
 
   syncJackpots();
@@ -525,7 +525,7 @@
       wrap[index].appendChild(numDom);
       domArr[index].push(numDom);
 
-      if (((jackpot.toString().length - 3) - numIndex) % 3 == 0) {
+      if (((jackpot.toString().length - 1) - numIndex) % 3 == 0) {
         const numDomSeparator = document.createElement('div');
         const separator = jackpot.toString().length - 3 == numIndex ? '.' : ',';
         for (let i = 0; i < 3; i++) {
@@ -570,7 +570,7 @@
       // Format the count as a two-digit number
       const formattedCount = count.toString().padStart(2, '0');
       // Update the CSS variable for the element
-      element.style.setProperty('--dynamic-content', `",${formattedCount}₾"`);
+      element.style.setProperty('--dynamic-content', `"${formattedCount}₾"`);
       
       // Increment the count, reset to 00 if it reaches 99
       count = (count + 1) % 100;
