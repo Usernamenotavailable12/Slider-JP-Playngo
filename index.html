@@ -460,107 +460,87 @@
   </div>
 </div>
 <script>
-  const TIME_INTERVAL = 10;
-  const JSON_URI = 'https://aeucw.playngonetwork.com/Jackpots?pid=1593&currency=GEL';
-  let intervals = [];
-  let previousJackpots = [];
+const TIME_INTERVAL = 10;
+const JSON_URI = 'https://aeucw.playngonetwork.com/Jackpots?pid=1593&currency=GEL';
+let intervals = [];
+let previousJackpots = [];
 
-  // Specify the JackpotIds you want to use
-  const jackpotIds = [2587, 2588, 2589, 2590]; // Replace with your actual JackpotIds
-  const jackpotAmounts = {}; // Object to hold amounts based on JackpotId
+// Specify the JackpotIds you want to use
+const jackpotIds = [3213, 3212, 3211, 3210]; // Replace with your actual JackpotIds
+const jackpotAmounts = {}; // Object to hold amounts based on JackpotId
 
+syncJackpots();
+
+setInterval(() => {
   syncJackpots();
+}, TIME_INTERVAL * 1000);
 
-  setInterval(() => {
-    syncJackpots();
-  }, TIME_INTERVAL * 1000);
+function syncJackpots() {
+  fetch(JSON_URI, { cache: 'no-cache' })
+    .then(res => res.json())
+    .then(data => {
+      intervals.forEach(interval => clearInterval(interval));
+      intervals = [];
 
-  function syncJackpots() {
-    fetch(JSON_URI, { cache: 'no-cache' })
-      .then(res => res.json())
-      .then(data => {
-        intervals.forEach(interval => clearInterval(interval));
-        intervals = [];
+      // Initialize previousJackpots if empty
+      previousJackpots = jackpotIds.map(id => getBaseAmountById(data, id));
 
-        // Initialize previousJackpots if empty
-        if (previousJackpots.length === 0) {
-          previousJackpots = jackpotIds.map(id => getBaseAmountById(data, id));
-        } else {
-          // Update previousJackpots with the latest data
-          previousJackpots = jackpotIds.map(id => getBaseAmountById(data, id));
-        }
+      const currentJackpots = jackpotIds.map(id => getBaseAmountById(data, id));
+      const diffs = currentJackpots.map((jackpot, index) => jackpot - previousJackpots[index]);
 
-        const currentJackpots = jackpotIds.map(id => getBaseAmountById(data, id));
-        const diffs = currentJackpots.map((jackpot, index) => jackpot - previousJackpots[index]);
+      const wrap = [];
+      const domArr = [];
 
-        const wrap = [];
-        const domArr = [];
+      previousJackpots.forEach((jackpot, index) => {
+        createInitialDomElements(wrap, domArr, jackpot, index);
 
-        previousJackpots.forEach((jackpot, index) => {
-          createInitialDomElements(wrap, domArr, jackpot, index);
-
-          const updateInterval = TIME_INTERVAL * 1000 / Math.max(diffs[index], 1); // Avoid division by zero
-          intervals.push(
-            setInterval(() => {
-              iterateAndUpdateJackpot(previousJackpots, index, wrap, domArr);
-            }, updateInterval)
-          );
-        });
+        const updateInterval = TIME_INTERVAL * 1000 / Math.max(diffs[index], 1); // Avoid division by zero
+        intervals.push(
+          setInterval(() => {
+            iterateAndUpdateJackpot(previousJackpots, index, wrap, domArr);
+          }, updateInterval)
+        );
       });
-  }
-
-  function getBaseAmountById(data, id) {
-    const jackpot = data.find(j => j.JackpotId === id);
-    return jackpot ? jackpot.BaseAmount : 0; // Return 0 if JackpotId not found
-  }
-
-  function createInitialDomElements(wrap, domArr, jackpot, index) {
-    wrap[index] = document.getElementById('wrapp' + index);
-    wrap[index].innerHTML = '';
-    domArr[index] = [];
-
-    jackpot.toString().split('').forEach((number, numIndex) => {
-      const numDom = document.createElement('div');
-      numDom.innerHTML = parseInt(number);
-      wrap[index].appendChild(numDom);
-      domArr[index].push(numDom);
-
-      if (((jackpot.toString().length - 1) - numIndex) % 3 == 0) {
-        const numDomSeparator = document.createElement('div');
-        const separator = jackpot.toString().length - 3 == numIndex ? '.' : ',';
-        for (let i = 0; i < 3; i++) {
-          const a = document.createElement('div');
-          a.innerHTML = separator;
-          numDomSeparator.appendChild(a);
-        }
-        wrap[index].appendChild(numDomSeparator);
-      }
     });
-  }
-/* ==========================================================================
-  function iterateAndUpdateJackpot(jackpots, index, wrap, domArr) {
-    jackpots[index]++;
-    const jackpot = jackpots[index];
+}
 
-    const jackLength = jackpot.toString().length;
-    if (wrap[index].children.length != jackLength + Math.floor(jackLength / 3)) {
-      createInitialDomElements(wrap, domArr, jackpot, index);
-      return;
+function getBaseAmountById(data, id) {
+  const jackpot = data.find(j => j.JackpotId === id);
+  return jackpot ? jackpot.BaseAmount : 0; // Return 0 if JackpotId not found
+}
+
+function createInitialDomElements(wrap, domArr, jackpot, index) {
+  wrap[index] = document.getElementById('wrapp' + index);
+  wrap[index].innerHTML = '';
+  domArr[index] = [];
+
+  // Format the jackpot value before splitting into characters and truncate last two digits
+  const formattedJackpot = Number(jackpot).toFixed(2).slice(0, -3); // Removes the last two digits and the decimal point
+
+  formattedJackpot.split('').forEach((character, numIndex) => {
+    const numDom = document.createElement('div');
+    if (!isNaN(character) && character !== ' ') {
+      numDom.innerHTML = character;
+    } else {
+      numDom.innerHTML = ''; // Handle non-numeric characters gracefully
     }
+    wrap[index].appendChild(numDom);
+    domArr[index].push(numDom);
 
-    const el = domArr[index][domArr[index].length - 1];
-    el.innerHTML = (parseInt(el.innerHTML) + 0) % 10;
-
-    let div = 1;
-    for (let i = domArr[index].length - 1; i >= 0; i--) {
-      div *= 20;
-      if (jackpot % div == 0) {
-        domArr[index][i].innerHTML = (parseInt(domArr[index][i].innerHTML) + 1) % 5;
+    if (((formattedJackpot.length - 1) - numIndex) % 3 === 0 && character !== '' && character !== ',') {
+      const numDomSeparator = document.createElement('div');
+      const separator = formattedJackpot.length - 4 === numIndex ? '.' : ',';
+      for (let i = 0; i < 3; i++) {
+        const a = document.createElement('div');
+        a.innerHTML = separator;
+        numDomSeparator.appendChild(a);
       }
+      wrap[index].appendChild(numDomSeparator);
     }
-  }
-  ========================================================================== */
-  function startCounting() {
+  });
+}
+
+function startCounting() {
   const elements = document.querySelectorAll('.jack');
   
   elements.forEach(element => {
@@ -583,9 +563,6 @@
 
 // Call the function to start counting
 startCounting();
-
-
-
 </script>
 
 </html>
