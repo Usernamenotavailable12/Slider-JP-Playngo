@@ -527,9 +527,9 @@ function createInitialDomElements(wrap, domArr, jackpot, index) {
     wrap[index].appendChild(numDom);
     domArr[index].push(numDom);
 
-    if (((formattedJackpot.length - 1) - numIndex) % 3 === 0 && character !== '' && character !== ',') {
+    if (((formattedJackpot.length - 1) - numIndex) % 3 === 0 && character !== '' && character !== '') {
       const numDomSeparator = document.createElement('div');
-      const separator = formattedJackpot.length - 4 === numIndex ? '.' : ',';
+      const separator = formattedJackpot.length - 4 === numIndex ? ',' : '.';
       for (let i = 0; i < 3; i++) {
         const a = document.createElement('div');
         a.innerHTML = separator;
