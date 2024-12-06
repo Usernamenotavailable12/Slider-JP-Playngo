@@ -4,565 +4,617 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <link rel="preload" as="font" crossorigin="anonymous" type="font/ttf"
-  href="https://usernamenotavailable12.github.io/Font-Repository/NotoSansAmbassadori-Bold.ttf">
+    href="https://usernamenotavailable12.github.io/Font-Repository/NotoSansAmbassadori-Bold.ttf">
 <style>
-  body:has(.container .jack) {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  .container {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    background: rgb(0, 0, 0, 0);
-    padding: 0px;
-    border-radius: 5px;
-    background-size: cover;
-    margin-left: 0rem;
-    margin-right: 0rem;
-    font-family: 'Noto Sans Ambassadori';
-    font-weight: bold;
-  }
-
-  .container * {
-    box-sizing: border-box;
-  }
-
-  .container .number-box .wrapper {
-    padding: 6px 0px;
-    padding-left: 5px;
-    width: 100%;
-    text-align: right;
-  }
-
-  .container .number-slider {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -ms-flex-align: center;
-    align-items: center;
-  }
-
-  .container .numbers {
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-top: -2px;
-    gap: 100px;
-  }
-
-  .numbers--box {
-    display: flex;
-    align-items: center;
-    filter: contrast(120%);
-  }
-
-  .container .numbers__item {
-    width: 179px;
-    height: 61px;
-    display: flex;
-    color: #ffffff;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-  }
-
-  @keyframes hue-rotation {
-  0% {
-    filter: hue-rotate(0deg) contrast(120%);
-  }
-  100% {
-    filter: hue-rotate(360deg) contrast(120%);
-  }
-}
-
-  .numbers__item.numbers__item--jvari {
-    background-image: url("https://images.takeshape.io/5da2b4d5-59f6-412a-82c3-f6a272b532be/dev/43f3d82b-37ec-4e92-ace4-aa91342ce2aa/mj_mini.webp");
-  }
-
-  .numbers__item.numbers__item--aguri {
-    background-image: url("https://images.takeshape.io/5da2b4d5-59f6-412a-82c3-f6a272b532be/dev/d54ff463-1012-493e-acd6-a47e33d0a55e/mj_minor.webp");
-    margin-right: 10px;
-  }
-
-  .numbers__item.numbers__item--yvavi {
-    background-image: url("https://images.takeshape.io/5da2b4d5-59f6-412a-82c3-f6a272b532be/dev/90d8f9a3-e51d-4079-a656-b579d7100a40/mj_grand.webp");
-    margin-right: 10px;
-  }
-
-  .numbers__item.numbers__item--guli {
-    background-image: url("https://images.takeshape.io/5da2b4d5-59f6-412a-82c3-f6a272b532be/dev/9bd28f66-d65f-4d9c-aec2-06b2eda5e277/mj_major.webp");
-  }
-
-  .container .numbers__item .numbers__item--icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .container .number__item--img {
-    width: 90px;
-  }
-
-  .container .numbers__item-wrap {
-    padding: 0 14px 0 14px;
-    width: 100%;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-  }
-  .numbers__item--yvavi .numbers__item-wrap::before {
-      content: 'Grand';
-      position: absolute;
-      top: 5px;
-      left: 50%;
-      transform: translate(-50%, 0);
-      background: rgb(122, 0, 0);
-      padding-left: 5px !important;
-      padding-right: 5px !important;
-      border-radius: 5px;
-
-    }
-
-    .numbers__item--guli .numbers__item-wrap::before {
-      content: 'Major';
-      position: absolute;
-      top: 5px;
-      left: 50%;
-      transform: translate(-50%, 0);
-      background: rgb(0, 8, 122);
-      padding-left: 5px !important;
-      padding-right: 5px !important;
-      border-radius: 5px;
-
-    }
-
-    .numbers__item--aguri .numbers__item-wrap::before {
-      content: 'Minor';
-      position: absolute;
-      top: 5px;
-      left: 50%;
-      transform: translate(-50%, 0);
-      background: rgb(0, 122, 153);
-      padding-left: 5px !important;
-      padding-right: 5px !important;
-      border-radius: 5px;
-
-    }
-
-    .numbers__item--jvari .numbers__item-wrap::before {
-      content: 'Mini';
-      position: absolute;
-      top: 5px;
-      left: 50%;
-      transform: translate(-50%, 0);
-      background: rgb(122, 0, 95);
-      padding-left: 5px !important;
-      padding-right: 5px !important;
-      border-radius: 5px;
-
-    }
-
-  .container .number-box {
-    overflow: hidden;
-    display: block;
-    margin-top: 13px;
-    font-size: 20px;
-    line-height: 28px;
-  }
-
-  .container .number-box .jack {
-    height: 29px;
-    overflow: hidden;
-    display: inline-block;
-    position: relative;
-  }
-
-  .jack>div {
-    display: inline-block;
-    margin-top: -56px;
-    font-size: 16px;
-  }
-
-  .jack>div>span {
-    display: block;
-    font-family: 'Noto Sans Ambassadori';
-    font-weight: bold;
-  }
-
-  .jack>div>span.dot {
-    visibility: hidden;
-    opacity: 0;
-  }
-
-  .jack>div.go {
-    -ms-transform: translateY(-28px);
-    transform: translateY(-28px);
-  }
-
-  .jackpot-logo-amb-mob {
-    display: none;
-  }
-
-  .jackpot-logo-amb-desk {
-    display: block;
-    animation: hue-rotationS 3s linear infinite;
-  }
-
-  .jackpot-logo-amb-desk:is(img) {
-    padding-left: 62px;
-    padding-right: 62px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-  }
-  .jack {
-    &::after {
-      content: var(--dynamic-content, ',00₾');
-      font-size: 16px;
-    }
-  }
-
-  @media (max-width: 1200px) {
-    .container .numbers {
-      flex-direction: column;
-      gap: 10px;
-      background-image: url('https://images.takeshape.io/5da2b4d5-59f6-412a-82c3-f6a272b532be/dev/454f8713-d27d-44fa-b409-15bce6fa6996/mj_background_3.webp');
-      border-radius: 5px;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      padding-top: 10px;
-      padding-bottom: 10px;
-    }
-    .jack {
-    &::after {
-      content: var(--dynamic-content, ',00₾');
-      font-size: 12px;
-    }
-  }
-
-    .container .number-box {
-      margin-top: 3px;
-    }
-
-    .container .numbers__item {
-      width: 130px;
-      height: 33px;
+    body:has(.container .jack) {
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     .container {
-      margin-left: 10px !important;
-      margin-right: 10px !important;
-      padding: 0px;
-      border: solid 1px rgb(207, 22, 125, 0.4);
-      padding-top: 2px;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        background: rgb(0, 0, 0, 0);
+        padding: 0px;
+        border-radius: 5px;
+        background-size: cover;
+        margin-left: 0rem;
+        margin-right: 0rem;
+        font-family: 'Noto Sans Ambassadori';
+        font-weight: bold;
     }
 
-    .jack>div {
-      font-size: 12px;
+    .container * {
+        box-sizing: border-box;
     }
 
-    .jackpot-logo-amb-desk {
-      display: none;
+    .container .number-box .wrapper {
+        padding: 6px 0px;
+        padding-left: 5px;
+        width: 100%;
+        text-align: right;
     }
 
-    .jackpot-logo-amb-mob {
-      display: none;
+    .container .number-slider {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -ms-flex-align: center;
+        align-items: center;
     }
 
-    .container .numbers__item-wrap {
-      padding: 0px 14px 0 14px;
-    }
-    .numbers__item--yvavi .numbers__item-wrap::before {
-      content: 'Grand';
-      position: absolute;
-      top: -6px;
-      left: 50%;
-      transform: translate(-50%, 0);
-      padding-left: 5px !important;
-      padding-right: 5px !important;
-      border-radius: 5px;
-      font-size: 10px !important;
-
-    }
-    .numbers__item--guli .numbers__item-wrap::before {
-      content: 'Major';
-      position: absolute;
-      top: -6px;
-      left: 50%;
-      transform: translate(-50%, 0);
-      padding-left: 5px !important;
-      padding-right: 5px !important;
-      border-radius: 5px;
-      font-size: 10px !important;
-
-    }
-    .numbers__item--aguri .numbers__item-wrap::before {
-      content: 'Minor';
-      position: absolute;
-      top: -6px;
-      left: 50%;
-      transform: translate(-50%, 0);
-      padding-left: 5px !important;
-      padding-right: 5px !important;
-      border-radius: 5px;
-      font-size: 10px !important;
-
-    }
-    .numbers__item--jvari .numbers__item-wrap::before {
-      content: 'Mini';
-      position: absolute;
-      top: -6px;
-      left: 50%;
-      transform: translate(-50%, 0);
-      padding-left: 5px !important;
-      padding-right: 5px !important;
-      border-radius: 5px;
-      font-size: 10px !important;
-
-    }
-  }
-
-  @media (min-width: 1200px) and (max-width: 1400px) {
     .container .numbers {
-      flex-direction: row;
-      gap: 80px;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: -2px;
+        gap: 100px;
+    }
+
+    .numbers--box {
+        display: flex;
+        align-items: center;
+        filter: contrast(120%);
     }
 
     .container .numbers__item {
-      width: 159px;
-      height: 41px;
+        width: 179px;
+        height: 61px;
+        display: flex;
+        color: #ffffff;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: relative;
+    }
+
+    @keyframes hue-rotation {
+        0% {
+            filter: hue-rotate(0deg) contrast(120%);
+        }
+
+        100% {
+            filter: hue-rotate(360deg) contrast(120%);
+        }
+    }
+
+    .numbers__item.numbers__item--jvari {
+        background-image: url("https://images.takeshape.io/5da2b4d5-59f6-412a-82c3-f6a272b532be/dev/43f3d82b-37ec-4e92-ace4-aa91342ce2aa/mj_mini.webp");
+    }
+
+    .numbers__item.numbers__item--aguri {
+        background-image: url("https://images.takeshape.io/5da2b4d5-59f6-412a-82c3-f6a272b532be/dev/d54ff463-1012-493e-acd6-a47e33d0a55e/mj_minor.webp");
+        margin-right: 10px;
+    }
+
+    .numbers__item.numbers__item--yvavi {
+        background-image: url("https://images.takeshape.io/5da2b4d5-59f6-412a-82c3-f6a272b532be/dev/90d8f9a3-e51d-4079-a656-b579d7100a40/mj_grand.webp");
+        margin-right: 10px;
+    }
+
+    .numbers__item.numbers__item--guli {
+        background-image: url("https://images.takeshape.io/5da2b4d5-59f6-412a-82c3-f6a272b532be/dev/9bd28f66-d65f-4d9c-aec2-06b2eda5e277/mj_major.webp");
+    }
+
+    .container .numbers__item .numbers__item--icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container .number__item--img {
+        width: 90px;
+    }
+
+    .container .numbers__item-wrap {
+        padding: 0 14px 0 14px;
+        width: 100%;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+    }
+
+    .numbers__item--yvavi .numbers__item-wrap::before {
+        content: 'Grand';
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        background: rgb(122, 0, 0);
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+        border-radius: 5px;
+
+    }
+
+    .numbers__item--guli .numbers__item-wrap::before {
+        content: 'Major';
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        background: rgb(0, 8, 122);
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+        border-radius: 5px;
+
+    }
+
+    .numbers__item--aguri .numbers__item-wrap::before {
+        content: 'Minor';
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        background: rgb(0, 122, 153);
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+        border-radius: 5px;
+
+    }
+
+    .numbers__item--jvari .numbers__item-wrap::before {
+        content: 'Mini';
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        background: rgb(122, 0, 95);
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+        border-radius: 5px;
+
+    }
+
+    .container .number-box {
+        overflow: hidden;
+        display: block;
+        margin-top: 13px;
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .container .number-box .jack {
+        height: 29px;
+        overflow: hidden;
+        display: inline-block;
+        position: relative;
     }
 
     .jack>div {
-      font-size: 14px;
+        display: inline-block;
+        margin-top: -56px;
+        font-size: 16px;
     }
+
+    .jack>div>span {
+        display: block;
+        font-family: 'Noto Sans Ambassadori';
+        font-weight: bold;
+    }
+
+    .jack>div>span.dot {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .jack>div.go {
+        -ms-transform: translateY(-28px);
+        transform: translateY(-28px);
+    }
+
+    .jackpot-logo-amb-mob {
+        display: none;
+    }
+
+    .jackpot-logo-amb-desk {
+        display: block;
+        animation: hue-rotationS 3s linear infinite;
+    }
+
+    .jackpot-logo-amb-desk:is(img) {
+        padding-left: 62px;
+        padding-right: 62px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+
     .jack {
-    &::after {
-      content: var(--dynamic-content, ',00₾');
-      font-size: 14px;
+        &::after {
+            content: var(--dynamic-content, ',00₾');
+            font-size: 16px;
+        }
     }
-  }
-  .numbers__item--yvavi .numbers__item-wrap::before {
-      content: 'Grand';
-      position: absolute;
-      top: 1px;
-      left: 50%;
-      transform: translate(-50%, 0);
-      padding-left: 5px !important;
-      padding-right: 5px !important;
-      border-radius: 5px;
-      font-size: 10px !important;
 
+    @media (max-width: 1200px) {
+        .container .numbers {
+            flex-direction: column;
+            gap: 10px;
+            background-image: url('https://images.takeshape.io/5da2b4d5-59f6-412a-82c3-f6a272b532be/dev/454f8713-d27d-44fa-b409-15bce6fa6996/mj_background_3.webp');
+            border-radius: 5px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .jack {
+            &::after {
+                content: var(--dynamic-content, ',00₾');
+                font-size: 12px;
+            }
+        }
+
+        .container .number-box {
+            margin-top: 3px;
+        }
+
+        .container .numbers__item {
+            width: 130px;
+            height: 33px;
+        }
+
+        .container {
+            margin-left: 10px !important;
+            margin-right: 10px !important;
+            padding: 0px;
+            border: solid 1px rgb(207, 22, 125, 0.4);
+            padding-top: 2px;
+        }
+
+        .jack>div {
+            font-size: 12px;
+        }
+
+        .jackpot-logo-amb-desk {
+            display: none;
+        }
+
+        .jackpot-logo-amb-mob {
+            display: none;
+        }
+
+        .container .numbers__item-wrap {
+            padding: 0px 14px 0 14px;
+        }
+
+        .numbers__item--yvavi .numbers__item-wrap::before {
+            content: 'Grand';
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            padding-left: 5px !important;
+            padding-right: 5px !important;
+            border-radius: 5px;
+            font-size: 10px !important;
+
+        }
+
+        .numbers__item--guli .numbers__item-wrap::before {
+            content: 'Major';
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            padding-left: 5px !important;
+            padding-right: 5px !important;
+            border-radius: 5px;
+            font-size: 10px !important;
+
+        }
+
+        .numbers__item--aguri .numbers__item-wrap::before {
+            content: 'Minor';
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            padding-left: 5px !important;
+            padding-right: 5px !important;
+            border-radius: 5px;
+            font-size: 10px !important;
+
+        }
+
+        .numbers__item--jvari .numbers__item-wrap::before {
+            content: 'Mini';
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            padding-left: 5px !important;
+            padding-right: 5px !important;
+            border-radius: 5px;
+            font-size: 10px !important;
+
+        }
     }
-    .numbers__item--guli .numbers__item-wrap::before {
-      content: 'Major';
-      position: absolute;
-      top: 1px;
-      left: 50%;
-      transform: translate(-50%, 0);
-      padding-left: 5px !important;
-      padding-right: 5px !important;
-      border-radius: 5px;
-      font-size: 10px !important;
 
+    @media (min-width: 1200px) and (max-width: 1400px) {
+        .container .numbers {
+            flex-direction: row;
+            gap: 80px;
+        }
+
+        .container .numbers__item {
+            width: 159px;
+            height: 41px;
+        }
+
+        .jack>div {
+            font-size: 14px;
+        }
+
+        .jack {
+            &::after {
+                content: var(--dynamic-content, ',00₾');
+                font-size: 14px;
+            }
+        }
+
+        .numbers__item--yvavi .numbers__item-wrap::before {
+            content: 'Grand';
+            position: absolute;
+            top: 1px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            padding-left: 5px !important;
+            padding-right: 5px !important;
+            border-radius: 5px;
+            font-size: 10px !important;
+
+        }
+
+        .numbers__item--guli .numbers__item-wrap::before {
+            content: 'Major';
+            position: absolute;
+            top: 1px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            padding-left: 5px !important;
+            padding-right: 5px !important;
+            border-radius: 5px;
+            font-size: 10px !important;
+
+        }
+
+        .numbers__item--aguri .numbers__item-wrap::before {
+            content: 'Minor';
+            position: absolute;
+            top: 1px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            padding-left: 5px !important;
+            padding-right: 5px !important;
+            border-radius: 5px;
+            font-size: 10px !important;
+
+        }
+
+        .numbers__item--jvari .numbers__item-wrap::before {
+            content: 'Mini';
+            position: absolute;
+            top: 1px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            padding-left: 5px !important;
+            padding-right: 5px !important;
+            border-radius: 5px;
+            font-size: 10px !important;
+
+        }
     }
-    .numbers__item--aguri .numbers__item-wrap::before {
-      content: 'Minor';
-      position: absolute;
-      top: 1px;
-      left: 50%;
-      transform: translate(-50%, 0);
-      padding-left: 5px !important;
-      padding-right: 5px !important;
-      border-radius: 5px;
-      font-size: 10px !important;
 
+    @font-face {
+        font-family: 'Noto Sans Ambassadori';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://usernamenotavailable12.github.io/Font-Repository/NotoSansAmbassadori-Bold.ttf);
     }
-    .numbers__item--jvari .numbers__item-wrap::before {
-      content: 'Mini';
-      position: absolute;
-      top: 1px;
-      left: 50%;
-      transform: translate(-50%, 0);
-      padding-left: 5px !important;
-      padding-right: 5px !important;
-      border-radius: 5px;
-      font-size: 10px !important;
 
+    @font-face {
+        font-family: 'Noto Sans Ambassadori';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://usernamenotavailable12.github.io/Font-Repository/NotoSansAmbassadori-Bold.ttf);
     }
-  }
-
-  @font-face {
-    font-family: 'Noto Sans Ambassadori';
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url(https://usernamenotavailable12.github.io/Font-Repository/NotoSansAmbassadori-Bold.ttf);
-  }
-
-  @font-face {
-    font-family: 'Noto Sans Ambassadori';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(https://usernamenotavailable12.github.io/Font-Repository/NotoSansAmbassadori-Bold.ttf);
-  }
 </style>
 <div class="container">
-  <div class="numbers">
-    <img class="jackpot-logo-amb-mob"
-      src="https://www.ambassadoribet.com/_internal/ts-images/5da2b4d5-59f6-412a-82c3-f6a272b532be/dev/6ae3e8c1-0176-47ec-b2ce-91db21fd1797/Logo_PLAYNGO.svg"
-      width="110" height="auto">
-    <div class="numbers--box">
-      <div class="numbers__item numbers__item--yvavi">
-        <div class="numbers__item-wrap">
-          <div class="number-box">
-            <div id="wrapp3" class="jack"></div>
-          </div>
+    <div class="numbers">
+        <img class="jackpot-logo-amb-mob"
+            src="https://www.ambassadoribet.com/_internal/ts-images/5da2b4d5-59f6-412a-82c3-f6a272b532be/dev/6ae3e8c1-0176-47ec-b2ce-91db21fd1797/Logo_PLAYNGO.svg"
+            width="110" height="auto">
+        <div class="numbers--box">
+            <div class="numbers__item numbers__item--yvavi">
+                <div class="numbers__item-wrap">
+                    <div class="number-box">
+                        <div id="wrapp3" class="jack"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="numbers__item numbers__item--guli">
+                <div class="numbers__item-wrap">
+                    <div class="number-box">
+                        <div id="wrapp2" class="jack"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="numbers__item numbers__item--guli">
-        <div class="numbers__item-wrap">
-          <div class="number-box">
-            <div id="wrapp2" class="jack"></div>
-          </div>
+        <img class="jackpot-logo-amb-desk"
+            src="https://www.ambassadoribet.com/_internal/ts-images/5da2b4d5-59f6-412a-82c3-f6a272b532be/dev/6ae3e8c1-0176-47ec-b2ce-91db21fd1797/Logo_PLAYNGO.svg"
+            width="220" height="auto">
+        <div class="numbers--box">
+            <div class="numbers__item numbers__item--aguri">
+                <div class="numbers__item-wrap">
+                    <div class="number-box">
+                        <div id="wrapp1" class="jack"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="numbers__item numbers__item--jvari">
+                <div class="numbers__item-wrap">
+                    <div class="number-box">
+                        <div id="wrapp0" class="jack"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <img class="jackpot-logo-amb-desk"
-      src="https://www.ambassadoribet.com/_internal/ts-images/5da2b4d5-59f6-412a-82c3-f6a272b532be/dev/6ae3e8c1-0176-47ec-b2ce-91db21fd1797/Logo_PLAYNGO.svg"
-      width="220" height="auto">
-    <div class="numbers--box">
-      <div class="numbers__item numbers__item--aguri">
-        <div class="numbers__item-wrap">
-          <div class="number-box">
-            <div id="wrapp1" class="jack"></div>
-          </div>
-        </div>
-      </div>
-      <div class="numbers__item numbers__item--jvari">
-        <div class="numbers__item-wrap">
-          <div class="number-box">
-            <div id="wrapp0" class="jack"></div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-  </div>
+    </div>
 </div>
 <script>
-const TIME_INTERVAL = 450;
-const JSON_URI = 'https://aeucw.playngonetwork.com/Jackpots?pid=1593&currency=GEL';
-let intervals = [];
-let previousJackpots = [];
+    const TIME_INTERVAL = 450;
+    const JSON_URI = 'https://aeucw.playngonetwork.com/Jackpots?pid=1593&currency=GEL';
+    let intervals = [];
+    let previousJackpots = [];
 
-// Specify the JackpotIds you want to use
-const jackpotIds = [3213, 3212, 3211, 3210]; // Replace with your actual JackpotIds
-const jackpotAmounts = {}; // Object to hold amounts based on JackpotId
+    // Specify the JackpotIds you want to use
+    const jackpotIds = [3213, 3212, 3211, 3210]; // Replace with your actual JackpotIds
+    const jackpotAmounts = {}; // Object to hold amounts based on JackpotId
 
-syncJackpots();
+    syncJackpots();
 
-setInterval(() => {
-  syncJackpots();
-}, TIME_INTERVAL * 1000);
+    setInterval(() => {
+        syncJackpots();
+    }, TIME_INTERVAL * 1000);
 
-function syncJackpots() {
-  fetch(JSON_URI, { cache: 'no-cache' })
-    .then(res => res.json())
-    .then(data => {
-      intervals.forEach(interval => clearInterval(interval));
-      intervals = [];
+    function syncJackpots() {
+        const jackpotElements = document.querySelectorAll('.jack');
+        if (!jackpotElements.length) {
+            // If no elements found, don't run the logic
+            return;
+        }
 
-      // Initialize previousJackpots if empty
-      previousJackpots = jackpotIds.map(id => getBaseAmountById(data, id));
+        fetch(JSON_URI, { cache: 'no-cache' })
+            .then(res => res.json())
+            .then(data => {
+                intervals.forEach(interval => clearInterval(interval));
+                intervals = [];
 
-      const currentJackpots = jackpotIds.map(id => getBaseAmountById(data, id));
-      const diffs = currentJackpots.map((jackpot, index) => jackpot - previousJackpots[index]);
+                // Initialize previousJackpots if empty
+                previousJackpots = jackpotIds.map(id => getBaseAmountById(data, id));
 
-      const wrap = [];
-      const domArr = [];
+                const currentJackpots = jackpotIds.map(id => getBaseAmountById(data, id));
+                const diffs = currentJackpots.map((jackpot, index) => jackpot - previousJackpots[index]);
 
-      previousJackpots.forEach((jackpot, index) => {
-        createInitialDomElements(wrap, domArr, jackpot, index);
+                const wrap = [];
+                const domArr = [];
 
-        const updateInterval = TIME_INTERVAL * 1000 / Math.max(diffs[index], 1); // Avoid division by zero
-        intervals.push(
-          setInterval(() => {
-            iterateAndUpdateJackpot(previousJackpots, index, wrap, domArr);
-          }, updateInterval)
-        );
-      });
-    });
-}
+                previousJackpots.forEach((jackpot, index) => {
+                    createInitialDomElements(wrap, domArr, jackpot, index);
 
-function getBaseAmountById(data, id) {
-  const jackpot = data.find(j => j.JackpotId === id);
-  return jackpot ? jackpot.BaseAmount : 0; // Return 0 if JackpotId not found
-}
-
-function createInitialDomElements(wrap, domArr, jackpot, index) {
-  wrap[index] = document.getElementById('wrapp' + index);
-  wrap[index].innerHTML = '';
-  domArr[index] = [];
-
-  // Format the jackpot value before splitting into characters and truncate last two digits
-  const formattedJackpot = Number(jackpot).toFixed(2).slice(0, -3); // Removes the last two digits and the decimal point
-
-  formattedJackpot.split('').forEach((character, numIndex) => {
-    const numDom = document.createElement('div');
-    if (!isNaN(character) && character !== ' ') {
-      numDom.innerHTML = character;
-    } else {
-      numDom.innerHTML = ''; // Handle non-numeric characters gracefully
-    }
-    wrap[index].appendChild(numDom);
-    domArr[index].push(numDom);
-
-    if (((formattedJackpot.length - 1) - numIndex) % 3 === 0 && character !== '' && character !== '') {
-      const numDomSeparator = document.createElement('div');
-      const separator = formattedJackpot.length - 4 === numIndex ? ',' : '.';
-      for (let i = 0; i < 3; i++) {
-        const a = document.createElement('div');
-        a.innerHTML = separator;
-        numDomSeparator.appendChild(a);
-      }
-      wrap[index].appendChild(numDomSeparator);
-    }
-  });
-}
-
-function startCounting() {
-  const elements = document.querySelectorAll('.jack');
-  
-  elements.forEach(element => {
-    let count = 0;
-
-    function updateCount() {
-      // Format the count as a two-digit number
-      const formattedCount = count.toString().padStart(2, '0');
-      // Update the CSS variable for the element
-      element.style.setProperty('--dynamic-content', `"${formattedCount}₾"`);
-      
-      // Increment the count, reset to 00 if it reaches 99
-      count = (count + 1) % 100;
+                    if (typeof iterateAndUpdateJackpot === 'function' && wrap[index]) {
+                        const updateInterval = TIME_INTERVAL * 1000 / Math.max(diffs[index], 1); // Avoid division by zero
+                        intervals.push(
+                            setInterval(() => {
+                                iterateAndUpdateJackpot(previousJackpots, index, wrap, domArr);
+                            }, updateInterval)
+                        );
+                    }
+                });
+            });
     }
 
-    // Start the interval to update every 100ms
-    setInterval(updateCount, 200);
-  });
-}
+    function getBaseAmountById(data, id) {
+        const jackpot = data.find(j => j.JackpotId === id);
+        return jackpot ? jackpot.BaseAmount : 0; // Return 0 if JackpotId not found
+    }
 
-// Call the function to start counting
-startCounting();
+    function createInitialDomElements(wrap, domArr, jackpot, index) {
+        wrap[index] = document.getElementById('wrapp' + index);
+        wrap[index].innerHTML = '';
+        domArr[index] = [];
+
+        const formattedJackpot = Number(jackpot).toFixed(2).slice(0, -3); // Removes the decimal and last two digits
+        formattedJackpot.split('').forEach((character, numIndex) => {
+            const numDom = document.createElement('div');
+            if (!isNaN(character) && character !== ' ') {
+                numDom.innerHTML = character;
+            } else {
+                numDom.innerHTML = ''; // Handle non-numeric gracefully
+            }
+            wrap[index].appendChild(numDom);
+            domArr[index].push(numDom);
+
+            if (((formattedJackpot.length - 1) - numIndex) % 3 === 0 && character !== '') {
+                const numDomSeparator = document.createElement('div');
+                const separator = formattedJackpot.length - 4 === numIndex ? ',' : '.';
+                for (let i = 0; i < 3; i++) {
+                    const a = document.createElement('div');
+                    a.innerHTML = separator;
+                    numDomSeparator.appendChild(a);
+                }
+                wrap[index].appendChild(numDomSeparator);
+            }
+        });
+    }
+
+    // Define the iterateAndUpdateJackpot function
+    function iterateAndUpdateJackpot(previousJackpots, index, wrap, domArr) {
+        // Increment the jackpot value
+        previousJackpots[index] += 1;
+
+        // Clear and re-render the updated jackpot
+        wrap[index].innerHTML = '';
+        domArr[index] = [];
+
+        const formattedJackpot = Number(previousJackpots[index]).toFixed(2).slice(0, -3);
+        formattedJackpot.split('').forEach((character, numIndex) => {
+            const numDom = document.createElement('div');
+            if (!isNaN(character) && character !== ' ') {
+                numDom.innerHTML = character;
+            } else {
+                numDom.innerHTML = '';
+            }
+            wrap[index].appendChild(numDom);
+            domArr[index].push(numDom);
+
+            if (((formattedJackpot.length - 1) - numIndex) % 3 === 0 && character !== '') {
+                const numDomSeparator = document.createElement('div');
+                const separator = formattedJackpot.length - 4 === numIndex ? ',' : '.';
+                for (let i = 0; i < 3; i++) {
+                    const a = document.createElement('div');
+                    a.innerHTML = separator;
+                    numDomSeparator.appendChild(a);
+                }
+                wrap[index].appendChild(numDomSeparator);
+            }
+        });
+    }
+
+    function startCounting() {
+        const elements = document.querySelectorAll('.jack');
+
+        elements.forEach(element => {
+            let count = 0;
+
+            function updateCount() {
+                // Format the count as a two-digit number
+                const formattedCount = count.toString().padStart(2, '0');
+                // Update the CSS variable for the element
+                element.style.setProperty('--dynamic-content', `"${formattedCount}₾"`);
+
+                // Increment the count, reset if it reaches 99
+                count = (count + 1) % 100;
+            }
+
+            // Update every 200ms
+            setInterval(updateCount, 200);
+        });
+    }
+
+    // Start the counting animation for the .jack elements
+    startCounting();
 </script>
 
 </html>
